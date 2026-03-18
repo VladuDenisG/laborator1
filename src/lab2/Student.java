@@ -32,6 +32,10 @@ public class Student
                 this.FormatieDeStudiu.equals(student.FormatieDeStudiu);
     }
 
+    public int hashCode()
+    {
+        return java.util.Objects.hash(nume , prenume , FormatieDeStudiu);
+    }
 
 
 

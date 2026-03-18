@@ -68,7 +68,18 @@ public class Main
         Student mariapopa = new Student("112", "Maria", "Popa", "TI21/1");
 
         System.out.println("\nExista Alis Popa ? "+ studenti.contains(alispopa));
-        System.out.println("\nExista Maria Popa? "+studenti.contains(mariapopa));
+        System.out.println("Exista Maria Popa? "+studenti.contains(mariapopa));
+
+        //PUNCTUL 2.5.3
+        Set<Student> setStudenti = new HashSet<>(studenti);
+        System.out.println("\nCautare O(1) \n");
+
+        boolean gasitAlis= setStudenti.contains(alispopa);
+        boolean gasitMaria= setStudenti.contains(mariapopa);
+
+        System.out.println("Alis a fost gasita ?  "+gasitAlis);
+        System.out.println("Maria a fost gasita ? "+gasitMaria);
+
 
     }
 }
