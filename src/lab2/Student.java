@@ -20,4 +20,19 @@ public class Student
         return nume + " " + prenume + " , numar matricol: " + nrMatricol + " , formatie de studiu: " + FormatieDeStudiu ;
     }
 
+    public boolean equals(Object o)
+    {
+        if(this == o)
+            return true;
+        if(o== null || getClass()!=o.getClass() )
+            return false;
+
+        Student student = (Student) o;
+        return this.nume.equals(student.nume) && this.prenume.equals(student.prenume) &&
+                this.FormatieDeStudiu.equals(student.FormatieDeStudiu);
+    }
+
+
+
+
 }
