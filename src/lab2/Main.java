@@ -81,9 +81,10 @@ public class Main {
         System.out.println("Maria a fost gasita ? " + gasitMaria);
         System.out.println();
 
-        //PUNCTUL 3.5.2
+        //PUNCTUL 3.5.2 + 3.5.3
         Path pathIn = Paths.get("studenti_in.txt");
         Path pathOut = Paths.get("studenti_out.txt");
+        Path pathOutSorted = Paths.get("studenti_out_sorted.txt");
         List<Student> listaStudenti = new ArrayList<>();
 
         try {
@@ -99,9 +100,9 @@ public class Main {
             {
                 System.out.println(s);
             }
-            listaStudenti.sort(Comparator.comparing(Student::getNume));
+            listaStudenti.sort(Comparator.comparing(Student::getFormatieDeStudiu).thenComparing(Student::getNume));
 
-            try (BufferedWriter writer = Files.newBufferedWriter(pathOut))
+            try (BufferedWriter writer = Files.newBufferedWriter(pathOutSorted))
             {
                 for(Student s:listaStudenti)
                 {
