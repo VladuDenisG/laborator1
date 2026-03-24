@@ -5,19 +5,19 @@ public class Student
     private String nrMatricol;
     private String prenume;
     private String nume;
-    private String FormatieDeStudiu;
+    private String formatieDeStudiu;
 
-    public Student (String nrMatricol , String prenume , String nume , String FormatieDeStudiu)
+    public Student (String nrMatricol , String prenume , String nume , String formatieDeStudiu)
     {
         this.nrMatricol=nrMatricol;
         this.prenume=prenume;
         this.nume=nume;
-        this.FormatieDeStudiu=FormatieDeStudiu;
+        this.formatieDeStudiu =formatieDeStudiu;
     }
 
     public String toString()
     {
-        return nume + " " + prenume + " , numar matricol: " + nrMatricol + " , formatie de studiu: " + FormatieDeStudiu ;
+        return nume + " " + prenume + " , numar matricol: " + nrMatricol + " , formatie de studiu: " + formatieDeStudiu;
     }
 
     public boolean equals(Object o)
@@ -29,14 +29,21 @@ public class Student
 
         Student student = (Student) o;
         return this.nume.equals(student.nume) && this.prenume.equals(student.prenume) &&
-                this.FormatieDeStudiu.equals(student.FormatieDeStudiu);
+                this.formatieDeStudiu.equals(student.formatieDeStudiu);
     }
 
     public int hashCode()
     {
-        return java.util.Objects.hash(nume , prenume , FormatieDeStudiu);
+        return java.util.Objects.hash(nume , prenume , formatieDeStudiu);
     }
 
-
+    public String getNume()
+    {
+        return nume;
+    }
+    public String getFormatieDeStudiu()
+    {
+        return formatieDeStudiu;
+    }
 
 }
