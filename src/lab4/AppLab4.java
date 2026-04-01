@@ -95,8 +95,28 @@ public class AppLab4 {
 
         }
 
+        float nota1 = gasesteNota("Bianca", "Popescu", mapStudenti);
+        float nota2 = gasesteNota("Ioan", "Popa", mapStudenti);
+        System.out.println();
+        System.out.println("Rezultate cautare: ");
+        System.out.println("nota Bianca Popescu: " + nota1);
+        System.out.println("nota Ioan Popa: " + nota2);
 
     }
+    //4.5.3
+    public static float gasesteNota(String prenume, String nume, HashMap<String, Student > tineri)
+    {
+        HashMap<String, Float> mapNumeNota = new HashMap<>();
+        for(Student s : tineri.values())
+        {
+            String cheieNume = s.getNume() + "-" + s.getPrenume();
+            mapNumeNota.put(cheieNume, s.getNota());
+        }
+        String cheieCautata = nume + "-" + prenume;
+        return mapNumeNota.getOrDefault(cheieCautata, 0.0f);
+
+    }
+
 
 
 
