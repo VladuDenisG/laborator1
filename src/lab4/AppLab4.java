@@ -89,7 +89,7 @@ public class AppLab4 {
             }
 
         } catch (IOException e) {
-            System.out.println("Eroare la citirea fisierelor!");
+            System.out.println("Eroare la citirea fisierelor");
             e.printStackTrace();
 
 
@@ -98,7 +98,7 @@ public class AppLab4 {
         float nota1 = gasesteNota("Bianca", "Popescu", mapStudenti);
         float nota2 = gasesteNota("Ioan", "Popa", mapStudenti);
         System.out.println();
-        System.out.println("Rezultate cautare: ");
+        System.out.println("Rezultate cautare note : ");
         System.out.println("nota Bianca Popescu: " + nota1);
         System.out.println("nota Ioan Popa: " + nota2);
 
