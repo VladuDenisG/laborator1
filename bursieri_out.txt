@@ -1,0 +1,4 @@
+Popescu Bianca , numar matricol: 1029 , formatie de studiu: TI131/1 , nota: 9.1 , cuantum bursa: 780.8
+Mihalcea Ioan , numar matricol: 1024 , formatie de studiu: ISM141/1 , nota: 9.8 , cuantum bursa: 801.1
+Popa Andrei , numar matricol: 1025 , formatie de studiu: ISM141/2 , nota: 8.7 , cuantum bursa: 725.5
+Prodan Anamaria , numar matricol: 1026 , formatie de studiu: TI131/1 , nota: 8.9 , cuantum bursa: 745.5
