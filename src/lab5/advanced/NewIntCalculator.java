@@ -2,32 +2,41 @@ package lab5.advanced;
 
 public class NewIntCalculator extends ACalculator
 {
-    public NewIntCalculator(int valoare)
+    public NewIntCalculator(Integer valoare)
     {
         this.state=valoare;
     }
+    public NewIntCalculator() {
+        super();
+    }
 
     @Override
-    protected void init()
+    public void init()
     {
         this.state = 0;
     }
 
-    public NewIntCalculator add(int v)
+    public NewIntCalculator add(Integer v)
     {
         this.state=(Integer)this.state+v;
         return this;
     }
 
-    public NewIntCalculator subtract(int v)
+    public NewIntCalculator subtract(Integer v)
     {
         this.state=(Integer)this.state-v;
         return this;
     }
 
-    public NewIntCalculator multiply(int v)
+    public NewIntCalculator multiply(Integer v)
     {
         this.state = (Integer)this.state*v;
+        return this;
+    }
+
+    public NewIntCalculator divide(Integer v)
+    {
+        this.state = (Integer)this.state/v;
         return this;
     }
 

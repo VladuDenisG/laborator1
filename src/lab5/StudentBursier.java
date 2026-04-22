@@ -31,4 +31,7 @@ public class StudentBursier extends Student
         return java.util.Objects.hash(super.hashCode(), cuantumBursa);
     }
 
+    public double getCuantumBursa() {
+        return this.cuantumBursa;
+    }
 }
