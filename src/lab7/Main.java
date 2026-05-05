@@ -66,14 +66,11 @@ public class Main {
             for (int i = 0; i < n; i++)
             {
                 String formatieDestinatie = (i < n / 2) ? formatia1 : formatia2;
-                listaNoua.add(schimbaFormatia(listaTemporara.get(i), formatieDestinatie));
+                listaNoua.add(listaTemporara.get(i).schimbaFormatia(formatieDestinatie));
             }
             return listaNoua;
         }
 
-        static Student schimbaFormatia(Student st, String nouaFormatieDeStudiu)
-        {
-            return st.schimbaFormatia(nouaFormatieDeStudiu);
-        }
+
 
 }

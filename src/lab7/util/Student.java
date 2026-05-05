@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public final class Student {
     private final String nrMatricol;
-    private final String prenume;
+    private final String prenume ;
     private final String nume;
     private final String formatieDeStudiu;
     private final float nota;
