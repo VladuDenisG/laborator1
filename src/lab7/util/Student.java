@@ -9,6 +9,10 @@ public final class Student {
     private final String formatieDeStudiu;
     private final float nota;
 
+    public Student cuNota(float nouaNota) {
+        return new Student(this.nrMatricol, this.prenume, this.nume, this.getFormatieDeStudiu(), nouaNota);
+    }
+
     public Student(String nrMatricol, String prenume, String nume, String formatieDeStudiu)
     {
         this.nrMatricol = nrMatricol;

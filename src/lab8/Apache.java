@@ -5,6 +5,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import lab7.util.Student;
+import java.io.*;
+import java.util.*;
 
 public class Apache {
 
@@ -81,4 +84,52 @@ public class Apache {
             e.printStackTrace();
         }
     }
+
+    // 8.5.4
+    public static void writeToXls(Collection<Student> studenti, String fileName) {
+        try (Workbook workbook = new XSSFWorkbook();
+             FileOutputStream fos = new FileOutputStream(fileName)) {
+
+            Sheet sheet = workbook.createSheet("Studenti");
+            int rowNum = 0;
+
+            for (Student st : studenti) {
+                Row row = sheet.createRow(rowNum++);
+                row.createCell(0).setCellValue(st.getNrMatricol());
+                row.createCell(1).setCellValue(st.getNume());
+                row.createCell(2).setCellValue(st.getPrenume());
+                row.createCell(3).setCellValue(st.getFormatieDeStudiu());
+                row.createCell(4).setCellValue(st.getNota());
+            }
+
+            workbook.write(fos);
+            System.out.println("Fisierul " + fileName + " a fost generat cu succes.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // 8.5.4 b)
+    public static List<Student> readFromXls(String fileName) {
+        List<Student> listaCitita = new ArrayList<>();
+        try (FileInputStream fis = new FileInputStream(new File(fileName));
+             Workbook workbook = new XSSFWorkbook(fis)) {
+
+            Sheet sheet = workbook.getSheetAt(0);
+            for (Row row : sheet) {
+                String nrMatricol = row.getCell(0).getStringCellValue();
+                String nume = row.getCell(1).getStringCellValue();
+                String prenume = row.getCell(2).getStringCellValue();
+                String formatie = row.getCell(3).getStringCellValue();
+                float nota = (float) row.getCell(4).getNumericCellValue();
+
+                Student s = new Student(nrMatricol, prenume, nume, formatie);
+                listaCitita.add(s.cuNota(nota));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return listaCitita;
+    }
+
 }

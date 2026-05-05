@@ -6,6 +6,7 @@ import lab7.forms.Form;
 import lab7.forms.Square;
 import lab7.forms.Triangle;
 import lab7.util.Student;
+import lab8.Apache;
 
 import java.util.*;
 
@@ -55,6 +56,16 @@ public class Main {
             }
         }
 
+        // 8.5.4 a)
+        String xlsFileName = "laborator8_students.xlsx";
+        Apache.writeToXls(studenti, xlsFileName);
+
+// 8.5.4 b)
+        List<Student> studentsFromXls = Apache.readFromXls(xlsFileName);
+        System.out.println("\n8.5.4 b) Studenți citiți din xlsx:");
+        for (Student st : studentsFromXls) {
+            System.out.println(st);
+        }
 
     }
 
