@@ -46,7 +46,6 @@ public class Exercitiu933 {
 
         //e
         double media = sumaNote / studentiCuNote.size();
-
         System.out.println("\nSuma notelor: " + sumaNote);
         System.out.println("Media notelor: " + media);
     }
