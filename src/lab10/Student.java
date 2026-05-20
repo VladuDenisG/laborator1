@@ -1,12 +1,13 @@
-package lab9;
+package lab10;
 
 public class Student {
     private int nrmatricol;
     private String prenume, nume, grupa;
     private double nota;
 
-    public Student(int id, String prenume, String nume, String grupa, double nota) {
-        this.nrmatricol = id; this.prenume = prenume; this.nume = nume; this.grupa = grupa; this.nota = nota;
+    public Student(int nrmatricol, String prenume, String nume, String grupa, double nota)
+    {
+        this.nrmatricol = nrmatricol; this.prenume = prenume; this.nume = nume; this.grupa = grupa; this.nota = nota;
     }
     public int getNrmatricol()
     { return nrmatricol; }
